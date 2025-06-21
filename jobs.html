@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs - TSU Jobs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="left_header">
+        <img src="/images/TSU_Logo.png" alt="Tsu logo" class="logo">
+        <h1 class="title">TSU Jobs</h1>
+        <button id="hide-sidebar"></button> 
+    </header>
+
+    <section class="left_area">
+        <nav class="main_buttons">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="jobs.html" class="nav-link active">Jobs</a>
+            <a href="login.php" class="nav-link">Log in</a>
+            <a href="register.html" class="nav-link">Register</a>
+            <a href="profile.php" class="nav-link">Profile</a>
+            <a href="about.html" class="nav-link">About us</a>
+        </nav>
+    </section>
+
+    <main class="main">
+        <section class="job-grid-container">
+            <div class="job-header">
+                <h1 class="welcome">Available Jobs (<span id="job-count"></span>)</h1>
+                <div class="job-search">
+                    <input type="text" placeholder="Search jobs..." id="job-search">
+                    <button id="search-button">Search</button>
+                </div>
+            </div>
+            
+            <div class="job-grid" id="job-grid">
+                <a href="jobs-form.html?id=1&title=Software+Developer" class="job-card">
+                    <h2 class="job-title">Software Developer</h2>
+                    <p class="job-company">Tech Solutions Inc.</p>
+                    <p class="job-desc">Build modern web applications using JavaScript and React.</p>
+                    <p class="job-location">Tbilisi, Georgia</p>
+                </a>
+
+                <a href="jobs-form.html?id=2&title=Data+Analyst" class="job-card">
+                    <h2 class="job-title">Data Analyst</h2>
+                    <p class="job-company">Data Insights LLC</p>
+                    <p class="job-desc">Analyze business data and create reports using Python and SQL.</p>
+                    <p class="job-location">Remote</p>
+                </a>
+
+                <a href="jobs-form.html?id=3&title=Marketing+Intern" class="job-card">
+                    <h2 class="job-title">Marketing Intern</h2>
+                    <p class="job-company">Digital Marketing Agency</p>
+                    <p class="job-desc">Assist with social media campaigns and content creation.</p>
+                    <p class="job-location">Tbilisi, Georgia</p>
+                </a>
+
+                <a href="jobs-form.html?id=4&title=UI/UX+Designer" class="job-card">
+                    <h2 class="job-title">UI/UX Designer</h2>
+                    <p class="job-company">Creative Design Studio</p>
+                    <p class="job-desc">Design user interfaces and experiences for mobile and web apps.</p>
+                    <p class="job-location">Batumi, Georgia</p>
+                </a>
+
+                <a href="jobs-form.html?id=5&title=IT+Support" class="job-card">
+                    <h2 class="job-title">IT Support Specialist</h2>
+                    <p class="job-company">TSU IT Department</p>
+                    <p class="job-desc">Provide technical support for university staff and students.</p>
+                    <p class="job-location">Tbilisi, Georgia</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer-text">&copy; Website from Sandro Lepsaia</p>
+    </footer>
+    
+    <script src="script.js"></script>
+    <script>
+        // Job search functionality
+        document.getElementById('search-button').addEventListener('click', function() {
+            const searchTerm = document.getElementById('job-search').value.toLowerCase();
+            const jobCards = document.querySelectorAll('.job-card');
+            
+            jobCards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            const visibleJobs = document.querySelectorAll('.job-card[style="display: block;"]').length;
+            document.getElementById('job-count').textContent = visibleJobs;
+        });
+    </script>
+</body>
+</html>

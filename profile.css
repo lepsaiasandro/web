@@ -1,0 +1,135 @@
+.profile-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.profile-header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.profile-header h2 {
+    color: #312e81;
+    margin-bottom: 5px;
+    font-size: 28px;
+}
+
+.profile-header p {
+    color: #64748b;
+    font-size: 16px;
+}
+
+.form-section {
+    background-color: #f8fafc;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.form-section h3 {
+    color: #312e81;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form-row label {
+    width: 180px;
+    font-weight: 600;
+    color: #334155;
+    text-align: right;
+    padding-right: 20px;
+}
+
+.form-row input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.static-value {
+    flex: 1;
+    padding: 12px 15px;
+    background-color: #f1f5f9;
+    border-radius: 8px;
+    margin: 0;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.save-button {
+    padding: 12px 40px;
+    font-size: 18px;
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.save-button:hover {
+    background-color: #4338ca;
+}
+
+.alert {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.alert.error {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+}
+
+.alert.success {
+    background-color: #dcfce7;
+    color: #15803d;
+    border: 1px solid #bbf7d0;
+}
+
+@media (max-width: 480px) {
+    .profile-container {
+        padding: 20px 15px;
+    }
+
+    .profile-header h2 {
+        font-size: 22px;
+    }
+
+    .form-section {
+        padding: 15px;
+    }
+
+    .form-row {
+        margin-bottom: 12px;
+    }
+
+    .alert {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
